@@ -1,0 +1,37 @@
+<!doctype>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Trace</title>
+        <link href="libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <script src="libs/jquery/dist/jquery.min.js" type="application/javascript"></script>
+        <script src="libs/bootstrap/dist/js/bootstrap.min.js" type="application/javascript"></script>
+        <script src="libs/angular/angular.min.js" type="application/javascript"></script>
+        <script src="libs/angular-resource/angular-resource.min.js" type="application/javascript"></script>
+        <script src="libs/angular-route/angular-route.min.js" type="application/javascript"></script>
+        <script src="js/app.js" type="application/javascript"></script>
+        <script src="js/directives/directives.js" type="application/javascript"></script>
+        <script src="js/services/accountService.js" type="application/javascript"></script>
+        <script src="js/indexCtrl.js" type="application/javascript"></script>
+        <script src="js/loginCtrl.js" type="application/javascript"></script>
+        <script src="js/services/ticketService.js" type="application/javascript"></script>
+        <script src="js/newTicketsCtrl.js" type="application/javascript"></script>
+        <script src="js/addTicketCtrl.js" type="application/javascript"></script>
+        <script src="js/ticketsCtrl.js" type="application/javascript"></script>
+        <script src="js/ticketCtrl.js" type="application/javascript"></script>
+        <script src="js/addCommentCtrl.js" type="application/javascript"></script>
+    </head>
+    <body ng-controller="indexCtrl">
+        
+        <!-- Header -->
+        <div ng-include="'views/shared/header.view.html'"></div>
+        
+        <div ng-view="">
+            
+        </div>
+        
+        <!-- Footer -->
+        <div ng-include="'views/shared/footer.view.html'"></div>
+        
+    </body>
+</html>

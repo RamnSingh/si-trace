@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
+       
+        <form novalidate ng-submit="login()" name="loginForm" ng-model="loginForm">
+         
+          <div class="form-group">
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" class="form-control" id="username" placeholder="Nom d'utilisateur" ng-model="loginForm.username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" class="form-control" id="password" placeholder="Mot de passe" ng-model="loginForm.password" required>
+          </div>
+          <button type="submit" class="btn btn-block btn-default" ng-disabled="!isFormValid" ng-class="{'btn-success': isFormValid, }">Se connecter</button>
+        </form>
+    </div>
+</div>

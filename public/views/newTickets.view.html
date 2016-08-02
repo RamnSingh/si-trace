@@ -1,0 +1,37 @@
+<div class="row">
+
+	<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+		<div class="page-header">
+		  <h1>New Tickets&nbsp;&nbsp;<small class="badge"ng-bind="newTickets.length"></small></h1>
+		</div>
+
+		<table class="table table-bordered table-hover">
+
+			<tr class="active">
+				<th>#</th>
+				<th>Summary</th>
+				<th>Priority</th>
+				<th>Username</th>
+				<th>Status</th>
+				<th>Action</th>
+			</tr>
+			<tr ng-repeat="newTicket in newTickets">
+				<td ng-bind="$index + 1"></td>
+				<td ng-bind="newTicket.summary"></td>
+				<td>
+					<span class="label" ng-class="getLabelClassForPriority(newTicket.priority)" ng-bind="newTicket.priority"></span>
+				</td>
+				<td>
+					<span ng-bind="newTicket.user.username" data-toggle="tooltip" data-placement="top" tooltip="{{newTicket.user.firstName + ' ' + newTicket.user.lastName}}"></span>
+				</td>
+				<td ng-bind="newTicket.status"></td>
+				<td>
+					<a ng-href="/#/ticket/{{newTicket._id}}" class="btn btn-info">Détails</a>
+				</td>
+			</tr>
+
+		</table>
+		
+	</div>
+
+</div>

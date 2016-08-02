@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+       
+    	<div class="panel panel-info">
+
+    		<div class="panel-heading" ng-bind="ticket.summary"></div>
+
+    		<div class="panel-body" ng-bind="ticket.description"></div>
+
+    		<div class="panel-footer">
+    			<form novalidate ng-submit="addComment()" name="commentForm" ng-model="comment">
+         
+		          <div class="form-group">
+		            <label for="content">Comment</label>
+		            <textarea class="form-control" id="content" placeholder="Please comment in this section." ng-model="comment.content" rows="5" required></textarea>
+		          </div>
+		          <button type="submit" class="btn btn-block btn-default" ng-disabled="!isFormValid" ng-class="{'btn-success': isFormValid, }">Envoyer</button>
+		        </form>
+    		</div>
+
+    	</div>
+
+       
+    </div>
+</div>

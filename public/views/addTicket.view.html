@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
+       
+        <form novalidate ng-submit="addTicket()" name="ticketForm" ng-model="ticket">
+         
+          <div class="form-group">
+            <label for="summary">Summary</label>
+            <input type="text" class="form-control" id="summary" placeholder="Summary" ng-model="ticket.summary" required>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" placeholder="A detailed description for the ticket" ng-model="ticket.description" rows="5" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="priority">Priority</label>
+            <select class="form-control" id="priority" ng-model="ticket.priority" required>
+              <option selected="selected">Trivial</option>
+              <option>Minor</option>
+              <option>Major</option>
+              <option>Critical</option>
+              <option>Blocker</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-block btn-default" ng-disabled="!isFormValid" ng-class="{'btn-success': isFormValid, }">Soumettre</button>
+        </form>
+    </div>
+</div>

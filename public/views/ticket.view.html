@@ -1,0 +1,61 @@
+<div class="row">
+
+	<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+
+		<div class="panel panel-info">
+			<div class="panel-heading" ng-bind="ticket.summary"></div>
+		  <div class="panel-body" ng-bind="ticket.description"></div>
+		  <div class="panel-footer">
+		  	<div class="row">
+		  		<div class="col-md-3 col-sm-3 col-xs-6">
+		  			<b>Reported by <span class="pull-right">:<span></b>
+		  		</div>
+		  		<div class="col-md-3 col-sm-3 col-xs-6" ng-bind="ticket.user.username">
+		  		</div>
+		  		<div class="col-md-3 col-sm-3 col-xs-6">
+		  			<b>Owned by</b>
+		  			 <span class="pull-right">:<span>
+		  		</div>
+		  		<div class="col-md-3 col-sm-3 col-xs-6" ng-bind="ticket.owner.username">
+		  		</div>
+		  	</div>
+
+		  	<div class="row">
+		  		<div class="col-md-3 col-sm-3 col-xs-6">
+		  			<b>Priority</b>
+		  			 <span class="pull-right">:<span>
+		  		</div>
+		  		<div class="col-md-3 col-sm-3 col-xs-6">
+		  			<span class="label" ng-class="getLabelClassForPriority(ticket.priority)" ng-bind="ticket.priority"></span>
+		  		</div>
+		  		<div class="col-md-3 col-sm-3 col-xs-6">
+		  			<b>Status</b>
+		  			 <span class="pull-right">:<span>
+		  		</div>
+		  		<div class="col-md-3 col-sm-3 col-xs-6" ng-bind="ticket.status">
+		  		</div>
+		  	</div>
+		  </div>
+		</div>
+
+		<button class="btn btn-warning btn-block" ng-show="ticket.status === 'New'" ng-click="changeStatus()">Start working</button>
+  		<button class="btn btn-success btn-block" ng-show="ticket.status === 'In progress'" ng-click="changeStatus()">Stop working</button>
+	</div>
+
+</div>
+
+<div class="row">
+
+	<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+		<a class="btn btn-info" ng-href="/#/addcomment/{{ticket._id}}">Add a comment</a>
+	</div>
+</div>
+
+<div class="row" ng-show="ticket.comments.length > 0">
+
+	<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+		<div class="panel panel-default" ng-repeat="comment in ticket.comments">
+			<p ng-bind="comment.content"></p>
+		</div>
+	</div>
+</div>
